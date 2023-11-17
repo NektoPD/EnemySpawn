@@ -4,6 +4,8 @@ using UnityEngine;
 public class EnemyMove : MonoBehaviour
 {
     private Animator _animator;
+    private const string ConditionName = "Speed";
+    private float _enemySpeed = 1;
 
     private void Awake()
     {
@@ -12,7 +14,6 @@ public class EnemyMove : MonoBehaviour
 
     private void Update()
     {
-        _animator.SetFloat("Speed", 1);
-        transform.Translate(2 * Time.deltaTime, 0, 0);
+        _animator.SetFloat(ConditionName, _enemySpeed);
     }
 }
