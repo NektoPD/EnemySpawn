@@ -5,7 +5,7 @@ using UnityEngine;
 public class EnemyMove : MonoBehaviour
 {
     private Animator _animator;
-    void Update()
+    private void Update()
     {
         _animator = GetComponent<Animator>();
         _animator.SetFloat("Speed", 1);
