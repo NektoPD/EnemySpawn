@@ -1,14 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
+[RequireComponent(typeof(Animator))]
 public class EnemyMove : MonoBehaviour
 {
     private Animator _animator;
-    void Update()
+    private const string ConditionName = "Speed";
+    private float _enemySpeed = 1;
+
+    private void Awake()
     {
         _animator = GetComponent<Animator>();
-        _animator.SetFloat("Speed", 1);
-        transform.Translate(2 * Time.deltaTime, 0, 0);
+    }
+
+    private void Update()
+    {
+        _animator.SetFloat(ConditionName, _enemySpeed);
     }
 }

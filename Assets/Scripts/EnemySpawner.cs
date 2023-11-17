@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class RandomEnemySpawner : MonoBehaviour
@@ -24,6 +22,8 @@ public class RandomEnemySpawner : MonoBehaviour
             {
                 int randomSpawnPoint = Random.Range(0, _spawnPoints.Length);
                 GameObject newEnemy = Instantiate(_enemy, _spawnPoints[randomSpawnPoint].position, Quaternion.identity);
+                
+                SetEnemyDirecton(newEnemy);
 
                 _count--;
                 _spawnRunningTime = _spawnInterval;
@@ -33,5 +33,10 @@ public class RandomEnemySpawner : MonoBehaviour
                 _spawnRunningTime -= Time.deltaTime;
             }
         }
+    }
+
+    private void SetEnemyDirecton(GameObject enemy)
+    {
+        enemy.transform.Translate(Vector2.right);
     }
 }
