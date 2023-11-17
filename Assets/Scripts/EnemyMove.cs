@@ -3,6 +3,7 @@ using UnityEngine;
 public class EnemyMove : MonoBehaviour
 {
     private Animator _animator;
+    
     private void Update()
     {
         _animator = GetComponent<Animator>();
