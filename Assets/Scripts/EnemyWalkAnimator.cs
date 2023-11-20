@@ -1,10 +1,11 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Animator))]
-public class EnemyMove : MonoBehaviour
+public class EnemyAnimator : MonoBehaviour
 {
-    private Animator _animator;
     private const string ConditionName = "Speed";
+
+    private Animator _animator;
     private float _enemySpeed = 1;
 
     private void Awake()
